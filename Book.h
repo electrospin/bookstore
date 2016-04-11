@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-//template<typename Obj>
+//template<typename T>
 class Book
 {
 public:

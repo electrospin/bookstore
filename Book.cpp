@@ -2,7 +2,6 @@
 #include "Book.h"
 using namespace std; 
 
-
 Book::Book() //defualt
 {
     ISBN = 0;
