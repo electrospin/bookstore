@@ -28,5 +28,12 @@ Book::Book(unsigned long int iniISBN,string iniTitle, string iniAuthor,string in
 
 Book::~Book()
 {
-    cout << "Book destructor called " << endl;
+  // cout << "Book destructor called " << endl;
 }
+
+void Book::PrintList()
+{
+    cout << "I need to finish emplenting this method." << endl;
+   //for (int i=0; i<books.size)
+}
+    

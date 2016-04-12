@@ -1,59 +1,57 @@
 #include <iostream>
 #include "Catalog.h"
-
-
 using namespace std;
 
-template<typename Book>
-Catalog<Book>::Catalog()//defualt constructor
+template<typename T>
+Catalog<T>::Catalog()//defualt constructor
 {
     numbooks = 0;
     currentPos = 0;
     cout << "Hello from catalog constructor." << endl;
 }
 
-template<typename Book>
-Catalog<Book>::Catalog(unsigned long int iniNumbooks,unsigned long int iniCurrentPos)
+template<typename T>
+Catalog<T>::Catalog(unsigned long int iniNumbooks,unsigned long int iniCurrentPos)
 {
     numbooks = iniNumbooks;
     currentPos = iniCurrentPos;
 }
-template<typename Book>
-Catalog<Book>::~Catalog()
+template<typename T>
+Catalog<T>::~Catalog()
 {
-    cout << "Default Catalog constructor called." << endl;
+    //out << "Default Catalog constructor called." << endl;
 }
 
-template<typename Book>
-bool Catalog<Book>::IsEmpty() const
+template<typename T>
+bool Catalog<T>::IsEmpty() const
 {
     return (numbooks==0);
 }
 
-template<typename Book>
-bool Catalog<Book>::IsFull() const
+template<typename T>
+bool Catalog<T>::IsFull() const
 {
     return (numbooks==MAX_LENGTH);
 }
 
-template<typename Book>
-int Catalog<Book>::GetLength() const
+template<typename T>
+int Catalog<T>::GetLength() const
 {
     return numbooks;
     
 }
-template<typename Book>
-void Catalog<Book>::Insert(const Book &item)
+template<typename T>
+void Catalog<T>::Insert(const T& item)
 {
     books[numbooks]= item;
-    numbooks++;
+   // numbooks++;
 }
 
-template<typename Book>
-void Catalog<Book>::Delete(const Book &item) 
+template<typename T>
+void Catalog<T>::Delete(const T &item) 
 {
     int i =0;
-    //for(int i=0; i<numbooks,item!=books[i];i++);
+    for(int i=0; i<numbooks,item!=books[i];i++);
     while (i<numbooks && item!=books[i])
         i++;
     if(i<numbooks)
@@ -62,18 +60,18 @@ void Catalog<Book>::Delete(const Book &item)
         numbooks--;
     }
 }
-template<typename Book>
-void Catalog<Book>::ResetList()
+template<typename T>
+void Catalog<T>::ResetList()
 {
     currentPos =0;
 }
 
-template<typename Book>
-Book Catalog<Book>::GetNextItem()
+template<typename T>
+T Catalog<T>::GetNextItem()
 {
-    Book item;
+    T item;
     item = books[currentPos];
-    currentPos++;
+    //currentPos++;
     return item;
 }
 

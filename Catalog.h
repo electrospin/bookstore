@@ -3,10 +3,9 @@
 
 #include "Book.h"
 const int MAX_LENGTH = 100;
-template<typename Book>
+template<typename T>
 class Catalog
 {
-    
     //Book item;
 public:
     Catalog();
@@ -17,21 +16,23 @@ public:
    bool IsFull() const;
    int GetLength()const;
    
-   void Insert(const Book &item);
-   void Delete(const Book &item);
+   void Insert(const T& item);
+   void Delete(const T& item);
    void ResetList();
-   Book GetNextItem();
+   T GetNextItem();
    
    // our book catalog will be a collection of an array of Type Book
     
 private: 
     //member array variable of a list of books
-    Book books[];//array of Book type objects
+    //Book books[MAX_LENGTH];//array of Book type objects
+    Book *book
     unsigned long int numbooks; // length of the Book list[];
     unsigned long int currentPos;
     
     
 };
+//#include "Catalog.cpp"
 
 #endif
 
